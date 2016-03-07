@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<transport name="BigFile" label="${com.esri.geoevent.transport.big-file-transport.TRANSPORT_IN_LABEL}" domain="com.esri.ges.transport.inbound" type="inbound">
+	<description>${com.esri.geoevent.transport.big-file-transport.TRANSPORT_IN_DESC}</description>
+	<propertyDefinitions>
+		<propertyDefinition propertyName="inputDirectory" label="${com.esri.geoevent.transport.big-file-transport.INPUT_DIR_LBL}" description="${com.esri.geoevent.transport.big-file-transport.INPUT_DIR_DESC}" propertyType="String" defaultValue="input" mandatory="false" readOnly="false"/>
+		<propertyDefinition propertyName="inputFileFilter" label="${com.esri.geoevent.transport.big-file-transport.INPUT_FILE_FILTER_LBL}" description="${com.esri.geoevent.transport.big-file-transport.INPUT_FILE_FILTER_DESC}" propertyType="String" defaultValue="*" mandatory="false" readOnly="false"/>
+		<propertyDefinition propertyName="inputFolderDataStore" label="${com.esri.geoevent.transport.big-file-transport.INPUT_FOLDER_DATASTORE_LBL}" description="${com.esri.geoevent.transport.big-file-transport.INPUT_FOLDER_DATASTORE_DESC}" propertyType="FolderDataStore" defaultValue="input" mandatory="true" readOnly="false"/>
+		<propertyDefinition propertyName="inputUseFileNamesAsChannelID" label="${com.esri.geoevent.transport.big-file-transport.USE_FILENAME_AS_CHANNEL_ID_LBL}" description="${com.esri.geoevent.transport.big-file-transport.USE_FILENAME_AS_CHANNEL_ID_DESC}" propertyType="Boolean" defaultValue="true" mandatory="false" readOnly="false"/>
+		<propertyDefinition propertyName="inputDeleteFiles" label="${com.esri.geoevent.transport.big-file-transport.DELETE_FILES_LBL}" description="${com.esri.geoevent.transport.big-file-transport.DELETE_FILES_DESC}" propertyType="Boolean" defaultValue="false" mandatory="false" readOnly="false"/>
+		<propertyDefinition propertyName="inputRecursivelyScan" label="${com.esri.geoevent.transport.big-file-transport.INCLUDE_SUBFOLDERS_LBL}" description="${com.esri.geoevent.transport.big-file-transport.INCLUDE_SUBFOLDERS_DESC}" propertyType="Boolean" defaultValue="true" mandatory="false" readOnly="false"/>
+		<propertyDefinition propertyName="inputMaxNumberOfLines" label="${com.esri.geoevent.transport.big-file-transport.MAX_NUM_OF_LINES_LBL}" description="${com.esri.geoevent.transport.big-file-transport.MAX_NUM_OF_LINES_DESC}" propertyType="Integer" defaultValue="1000" mandatory="false" readOnly="false"/>
+		<propertyDefinition propertyName="inputFlushIntervalInMS" label="${com.esri.geoevent.transport.big-file-transport.FLUSH_INTERVAL_LBL}" description="${com.esri.geoevent.transport.big-file-transport.FLUSH_INTERVAL_DESC}" propertyType="Integer" defaultValue="500" mandatory="false" readOnly="false"/>
+		<propertyDefinition propertyName="inputIgnoreFirstLine" label="${com.esri.geoevent.transport.big-file-transport.IGNORE_FIRST_LINE_LBL}" description="${com.esri.geoevent.transport.big-file-transport.IGNORE_FIRST_LINE_DESC}" propertyType="Boolean" defaultValue="false" mandatory="false" readOnly="false"/>
+	</propertyDefinitions>
+</transport>

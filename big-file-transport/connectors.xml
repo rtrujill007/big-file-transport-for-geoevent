@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<template productVersion="10.4.0">
+    <connectors>
+        <connector accessType="editable" label="Watch a Folder for New CSV BIG Files" name="big-file-text-in" type="inbound">
+            <adapter uri="com.esri.ges.adapter.inbound/Text/10.4.0"/>
+            <defaultName>big-file-text-in</defaultName>
+            <description>Reads CSV BIG files from a folder data store and converts data to GeoEvents.</description>
+            <properties>
+                <advanced>
+                    <property default="true" label="Create Unrecognized Event Definitions" name="CreateUnrecognizedGeoEventDefinitions" source="adapter"/>
+                    <property default="\n" label="Event Separator" name="MessageSeparator" source="adapter"/>
+                    <property default="," label="Field Separator" name="AttributeSeparator" source="adapter"/>
+                    <property default="true" label="Incoming Data Contains GeoEvent Definition" name="IncomingDataContainsGeoEventDefinition" source="adapter"/>
+                    <property default="false" label="Create Fixed GeoEvent Definitions" name="CreateFixedGeoEventDefinitions" source="adapter"/>
+                    <property label="GeoEvent Definition Name (New)" name="NewFixedGeoEventDefinitionName" source="adapter"/>
+                    <property label="GeoEvent Definition Name (Existing)" name="ExistingFixedGeoEventDefinitionName" source="adapter"/>
+                    <property default="false" label="Build Geometry From Fields" name="BuildGeometryFromFields" source="adapter"/>
+                    <property label="X Geometry Field" name="XGeometryField" source="adapter"/>
+                    <property label="Y Geometry Field" name="YGeometryField" source="adapter"/>
+                    <property label="Z Geometry Field" name="ZGeometryField" source="adapter"/>
+                    <property label="wkid Geometry Field" name="WKIDGeometryField" source="adapter"/>
+                    <property label="Well Known Text Geometry Field" name="WKTextGeometryField" source="adapter"/>
+                    <property label="Expected Date Format" name="CustomDateFormat" source="adapter"/>
+                    <property label="Language for Number Formatting" name="LocaleForNumberFormatter" source="adapter"/>
+                    <property default="false" label="Delete Files After Processing" name="inputDeleteFiles" source="transport"/>
+                    <property default="true" label="Include Subfolders" name="inputRecursivelyScan" source="transport"/>
+                </advanced>
+                <hidden>
+                    <property default="true" label="Use File Names As Channel ID" name="inputUseFileNamesAsChannelID" source="transport"/>
+                </hidden>
+                <shown>
+                    <property default="input" label="Input Directory" name="inputDirectory" source="transport"/>
+                    <property default="*" label="Input File Filter" name="inputFileFilter" source="transport"/>
+                    <property default="input" label="Input Folder DataStore" name="inputFolderDataStore" source="transport"/>
+                    <property default="1000" label="Max Number of Lines" name="inputMaxNumberOfLines" source="transport"/>
+                    <property default="500" label="Flush Interval" name="inputFlushIntervalInMS" source="transport"/>
+                    <property default="true" label="Ignore the first line" name="inputIgnoreFirstLine" source="transport"/>
+                </shown>
+            </properties>
+            <transport uri="com.esri.ges.transport.inbound/BigFile/10.4.0"/>
+        </connector>
+        <connector accessType="editable" label="Watch a Folder for New GeoJSON BIG Files" name="esri-in-bigfolder-geojson" type="inbound">
+            <adapter uri="com.esri.ges.adapter.inbound/GeoJSON/10.4.0"/>
+            <defaultName>big-file-geojson-in</defaultName>
+            <description>Reads GeoJSON BIG files from a folder data store and converts data to GeoEvents.</description>
+            <properties>
+                <advanced>
+                    <property label="GeoEvent Definition Name (Existing)" name="ExistingGeoEventDefinitionName" source="adapter"/>
+                    <property default="Generated-GeoEventDefinition" label="GeoEvent Definition Name (New)" name="NewGeoEventDefinitionName" source="adapter"/>
+                    <property default="true" label="Create GeoEvent Definition" name="CreateGeoEventDefinition" source="adapter"/>
+                    <property label="Expected Date Format" name="CustomDateFormat" source="adapter"/>
+                    <property default="4326" label="Default Spatial Reference WKID" name="DefaultWKID" source="adapter"/>
+                    <property default="false" label="Delete Files After Processing" name="inputDeleteFiles" source="transport"/>
+                    <property default="true" label="Include Subfolders" name="inputRecursivelyScan" source="transport"/>
+                </advanced>
+                <hidden>
+                    <property default="true" label="Use File Names As Channel ID" name="inputUseFileNamesAsChannelID" source="transport"/>
+                </hidden>
+                <shown>
+                    <property default="input" label="Input Directory" name="inputDirectory" source="transport"/>
+                    <property default="*" label="Input File Filter" name="inputFileFilter" source="transport"/>
+                    <property default="input" label="Input Folder DataStore" name="inputFolderDataStore" source="transport"/>
+                    <property default="1000" label="Max Number of Lines" name="inputMaxNumberOfLines" source="transport"/>
+                    <property default="500" label="Flush Interval" name="inputFlushIntervalInMS" source="transport"/>
+                    <property default="false" label="Ignore the first line" name="inputIgnoreFirstLine" source="transport"/>
+                </shown>
+            </properties>
+            <transport uri="com.esri.ges.transport.inbound/BigFile/10.4.0"/>
+        </connector>
+        <connector accessType="editable" label="Watch a Folder for New JSON BIG Files" name="big-file-json-in" type="inbound">
+            <adapter uri="com.esri.ges.adapter.inbound/Generic-JSON/10.4.0"/>
+            <defaultName>big-file-json-in</defaultName>
+            <description>Reads JSON BIG files from a folder data store and converts data to GeoEvents.</description>
+            <properties>
+                <advanced>
+                    <property default="true" label="Include Subfolders" name="inputRecursivelyScan" source="transport"/>
+                    <property label="JSON Object Name" name="JsonObjectName" source="adapter"/>
+                    <property default="true" label="Create GeoEvent Definition" name="CreateGeoEventDefinition" source="adapter"/>
+                    <property label="GeoEvent Definition Name (Existing)" name="ExistingGeoEventDefinitionName" source="adapter"/>
+                    <property default="NewFeatureGeoEventDef" label="GeoEvent Definition Name (New)" name="NewGeoEventDefinitionName" source="adapter"/>
+                    <property label="Expected Date Format" name="CustomDateFormat" source="adapter"/>
+                    <property default="false" label="Build Geometry From Fields" name="BuildGeometryFromFields" source="adapter"/>
+                    <property label="X Geometry Field" name="XGeometryField" source="adapter"/>
+                    <property label="Y Geometry Field" name="YGeometryField" source="adapter"/>
+                    <property label="Z Geometry Field" name="ZGeometryField" source="adapter"/>
+                    <property label="wkid Geometry Field" name="WKIDGeometryField" source="adapter"/>
+                    <property label="Well Known Text Geometry Field" name="WKTextGeometryField" source="adapter"/>
+                    <property default="false" label="Learning Mode" name="isLearningMode" source="adapter"/>
+                    <property default="false" label="Delete Files After Processing" name="inputDeleteFiles" source="transport"/>
+                </advanced>
+                <hidden>
+                    <property default="true" label="Use File Names As Channel ID" name="inputUseFileNamesAsChannelID" source="transport"/>
+                </hidden>
+                <shown>
+                    <property default="input" label="Input Directory" name="inputDirectory" source="transport"/>
+                    <property default="*" label="Input File Filter" name="inputFileFilter" source="transport"/>
+                    <property default="input" label="Input Folder DataStore" name="inputFolderDataStore" source="transport"/>
+                    <property default="1000" label="Max Number of Lines" name="inputMaxNumberOfLines" source="transport"/>
+                    <property default="500" label="Flush Interval" name="inputFlushIntervalInMS" source="transport"/>
+                    <property default="true" label="Ignore the first line" name="inputIgnoreFirstLine" source="transport"/>
+                </shown>
+            </properties>
+            <transport uri="com.esri.ges.transport.inbound/BigFile/10.4.0"/>
+        </connector>
+    </connectors>
+</template>

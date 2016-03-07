@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0" >
+	<reference id="folderDataStoreManagerService"   interface="com.esri.ges.manager.datastore.folder.FolderDataStoreManager" timeout="1000"/>
+	<bean id="bigFileInboundTransportServiceBean" class="com.esri.geoevent.transport.bigfile.BigFileInboundTransportService" activation="eager">
+		<property name="folderDataStoreManager" ref="folderDataStoreManagerService"/>
+		<property name="bundleContext" ref="blueprintBundleContext"/>
+	</bean>
+	
+	<service id="bigFileInboundTransportService" ref="bigFileInboundTransportServiceBean" interface="com.esri.ges.transport.TransportService"/>
+</blueprint>
